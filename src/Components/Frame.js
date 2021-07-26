@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Static/Frame.css';
 import Screen from './Screen';
+import Wheel from './Wheel'
 
 class Frame extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Frame extends React.Component {
         return (
             <div className="frame">
                 <Screen />
+                <Wheel />
             </div>
         );
     }
