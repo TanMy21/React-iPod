@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../Static/Frame.css';
 
 class Frame extends React.Component {
     constructor(props) {
@@ -7,7 +7,11 @@ class Frame extends React.Component {
         this.state = {  }
     }
     render() { 
-        return ( <p>ipod</p> );
+        return (
+            <div className="frame">
+       
+            </div>
+        );
     }
 }
  
