@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Static/Frame.css';
+import Screen from './Screen';
 
 class Frame extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Frame extends React.Component {
     render() { 
         return (
             <div className="frame">
-       
+                <Screen />
             </div>
         );
     }
