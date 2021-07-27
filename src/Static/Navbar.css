@@ -1,0 +1,24 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 16px;
+  background-color: #dedfe1;
+  background-image: linear-gradient(#feffff, #99999b);
+}
+
+.now-playing {
+  margin-top: -16px;
+  margin-left: -92px;
+}
+
+.battery {
+  margin-top: -36px;
+  margin-left: 92px;
+  color: #579b2e;
+  font-size: 18px;
+}

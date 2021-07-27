@@ -1,0 +1,46 @@
+.menu-heading {
+  margin: 20px;
+}
+
+.menubar {
+  display: flex;
+  width: 50%;
+  height: 210px;
+  background-color: rgb(253, 253, 253);
+}
+
+.menu-navbar {
+  position: absolute;
+  width: 135px;
+  height: 20px;
+  background-color: #dedfe1;
+  background-image: linear-gradient(#feffff, #99999b);
+}
+
+.menu {
+  margin-top: 10px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  text-align: left;
+}
+
+.menu-option li {
+  list-style-type: none;
+  margin-top: 10px;
+  margin-left: -30px;
+  padding-left: 8px;
+}
+
+#menu-selected {
+  background-color: rgb(30, 98, 223);
+  color: rgb(253, 253, 253);
+  width: 130%;
+}
+
+#menu-selected:after {
+  display: inline;
+  color: rgb(255, 255, 255);
+  content: " >";
+  height: 10%;
+}

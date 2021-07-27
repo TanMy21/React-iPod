@@ -1,58 +1,54 @@
- /*-----------------------  Wheel styling  ---------------------------------*/
+/*-----------------------  Wheel styling  ---------------------------------*/
 
- .wheel{
-    margin: auto;
-    margin-top: 0px;
-    display: block;
-    width: 64%;
-    height: 40%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50%;
-    /* border: 2px solid black; */
-   }
-  
-
-   /* Buttons Section */
-
-.wheel-btns{
-    font-size: 1.2rem;
-    color: #ADADAD;    
+.wheel {
+  margin: auto;
+  margin-top: -4px;
+  display: block;
+  width: 64%;
+  height: 40%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
 }
 
-.center-btn{
-    display: block;
-    margin: auto;
-    margin-top: -56px;
-    width: 40%;
-    height: 40%;
-    background-color: rgb(190, 189, 189);
-    border-radius: 50%;
+/*=========================== Buttons Section ====================================*/
+
+.wheel-btns {
+  font-size: 1.2rem;
+  color: #adadad;
 }
 
-#menu-btn{
-    margin: auto;
-    margin-top: 8px;
-    cursor: grab;
-    color: #918d8d;  
+.center-btn {
+  display: block;
+  margin: auto;
+  margin-top: -56px;
+  width: 40%;
+  height: 40%;
+  background-color: rgb(190, 189, 189);
+  border-radius: 50%;
 }
 
-.backward-btn{
-    margin-left: -180px;
-    margin-top: 52px;
-    font-size: 1.5rem;
-    color: #ADADAD;
-    /* border: 2px solid black;  */
+#menu-btn {
+  margin: auto;
+  margin-top: 8px;
+  cursor: grab;
+  color: #918d8d;
 }
 
-.forward-btn{
-    margin-left:1px;
-    font-size: 1.5rem;
-    color: #ADADAD;
-    /* border: 2px solid black; */
+.backward-btn {
+  margin-left: -180px;
+  margin-top: 52px;
+  font-size: 1.5rem;
+  color: #adadad;
 }
 
-.play-pause-btn{
-    font-size: 1.1rem;
-    color: #ADADAD;
-    margin-top: 20px;
+.forward-btn {
+  margin-left: 1px;
+  font-size: 1.5rem;
+  color: #adadad;
+}
+
+.play-pause-btn {
+  font-size: 1.1rem;
+  color: #adadad;
+  margin-top: 20px;
 }

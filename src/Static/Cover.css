@@ -1,0 +1,10 @@
+.cover {
+  float: right;
+  margin-top: -210px;
+  width: 135px;
+}
+
+.song-image {
+  width: 100%;
+  height: 210px;
+}
