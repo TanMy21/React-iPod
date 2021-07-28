@@ -65,11 +65,11 @@ class Frame extends React.Component {
       "rotate",
       (e) => {
         if (e.detail.distanceFromLast >= 4) {
-          console.log('Down');
+          this.rotateClockwise();
         }
 
         if (e.detail.distanceFromLast <= -4) {
-          console.log('Up');
+          this.rotateAntiClockwise();
         }
       },
       false
@@ -85,7 +85,7 @@ class Frame extends React.Component {
       menuTapArea,
       "tap",
       (e) => {
-        console.log('Menu Button Tapped');
+        console.log("Menu Button Tapped");
       },
       false
     );
@@ -100,7 +100,7 @@ class Frame extends React.Component {
       centerButtonTapArea,
       "tap",
       (e) => {
-        console.log('Center Button Tapped');
+        console.log("Center Button Tapped");
       },
       false
     );
@@ -115,11 +115,55 @@ class Frame extends React.Component {
       playPauseButtonTapArea,
       "tap",
       (e) => {
-        console.log('Play Button Tapped');
+        console.log("Play Button Tapped");
       },
       false
     );
   }
+
+  // function to change active option rotating clockwise
+  rotateClockwise = () => {
+    
+    const { menuOptions } = this.state;
+
+    console.log(menuOptions);
+    // get Index of Active Item
+    const index = menuOptions.findIndex((item) => item.isActive);
+    menuOptions[index].isActive = false;
+
+    // if its a last item then make first item As Active
+    if (index === menuOptions.length - 1) {
+      menuOptions[0].isActive = true;
+    } else {
+      // select next item as Active
+      menuOptions[index + 1].isActive = true;
+    }
+
+    this.setState({
+      menuOptions: menuOptions,
+    });
+  };
+
+  // function to change active option rotating clockwise
+  rotateAntiClockwise = () => {
+    const { menuOptions } = this.state;
+
+    // get Index of Active Item
+    const index = menuOptions.findIndex((item) => item.isActive);
+    menuOptions[index].isActive = false;
+
+    // if it's a first item then make last item as active
+    if (index === 0) {
+      menuOptions[menuOptions.length - 1].isActive = true;
+    } else {
+      // select prv item as active
+      menuOptions[index - 1].isActive = true;
+    }
+
+    this.setState({
+      menuOptions: menuOptions,
+    });
+  };
 
   render() {
     //-------------------------- destructuring ------------------
