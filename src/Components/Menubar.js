@@ -5,14 +5,12 @@ import Navbar from "./Navbar";
 
 const Menubar = (props) => {
   // ---------------------- Destructuring --------------------
-  const { menuOptions } = props;
+  const { menuOptions, selectedOption, musicSubMenu } = props;
+  // console.log(selectedOption);
 
-  return (
-    <div className="menubar">
-      <div className="menu-navbar">
-        <Navbar />
-      </div>
-      <div className="menu">
+  const changeMenu = () => {
+    if (selectedOption === 0) {
+      return (
         <div className="menu-option">
           <ul>
             {/* ----------------- Render Menu Options as a List -------------------- */}
@@ -21,7 +19,29 @@ const Menubar = (props) => {
             })}
           </ul>
         </div>
+      );
+    }
+
+    if (selectedOption === 2) {
+      return (
+        <div className="menu-option">
+          <ul>
+            {/* ----------------- Render Menu Options as a List -------------------- */}
+            {musicSubMenu.map((item) => {
+              return <Menulist item={item} key={item.id} />;
+            })}
+          </ul>
+        </div>
+      );
+    }
+  };
+
+  return (
+    <div className="menubar">
+      <div className="menu-navbar">
+        <Navbar />
       </div>
+      <div className="menu">{changeMenu()}</div>
     </div>
   );
 };

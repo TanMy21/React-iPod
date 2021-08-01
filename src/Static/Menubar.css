@@ -18,7 +18,7 @@
 }
 
 .menu {
-  margin-top: 10px;
+  margin-top: 16px;
   font-size: 20px;
   color: rgb(0, 0, 0);
   font-weight: 600;
@@ -35,12 +35,14 @@
 #menu-selected {
   background-color: rgb(30, 98, 223);
   color: rgb(253, 253, 253);
-  width: 130%;
+  width: 128%;
 }
 
 #menu-selected:after {
-  display: inline;
+  padding: 1px;
+  display: inline-block;
   color: rgb(255, 255, 255);
-  content: " >";
+  content: "  >";
   height: 10%;
+  overflow:visible;
 }

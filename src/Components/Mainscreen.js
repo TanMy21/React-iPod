@@ -5,12 +5,12 @@ import Cover from "./Cover";
 
 const Mainscreen = (props) => {
   // ---------------------- Destructuring --------------------
-  const { menuOptions } = props;
+  const { menuOptions, selectedOption, musicSubMenu } = props;
 
   return (
     <div className="mainscreen">
-      <Menubar menuOptions={menuOptions} />
-      <Cover />
+      <Menubar menuOptions={menuOptions} musicSubMenu={ musicSubMenu } selectedOption={ selectedOption }/>
+      <Cover selectedOption={selectedOption}/>
     </div>
   );
 };
