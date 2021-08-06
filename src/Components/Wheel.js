@@ -5,7 +5,9 @@ import { FaFastForward } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 
-const Wheel = () => {
+const Wheel = (props) => {
+  const { Play } = props;
+
   return (
     <div className="wheel" id="wheel">
       <div className="wheel-btns">
@@ -15,8 +17,7 @@ const Wheel = () => {
       <FaFastBackward className="backward-btn" />
       <div className="center-btn" id="center-btn"></div>
       <div className="play-pause-btn" id="play-pause-btn">
-        <FaPlay />
-        <FaPause />
+        {Play ? <FaPause /> : <FaPlay />}
       </div>
     </div>
   );

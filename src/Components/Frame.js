@@ -123,7 +123,7 @@ class Frame extends React.Component {
       playPauseButtonTapArea,
       "tap",
       (e) => {
-        console.log("Play Button Tapped");
+        this.playPauseButtonTap();
       },
       false
     );
@@ -137,24 +137,12 @@ class Frame extends React.Component {
     const mainIndex = menuOptions.findIndex((item) => item.isActive);
     menuOptions[mainIndex].isActive = false;
 
-    // get Index of Active Item for Music Sub Menu
-    const subIndex = musicSubMenu.findIndex((item) => item.isActive);
-    musicSubMenu[subIndex].isActive = false;
-
     // if its a last item then make first item As Active for menuoptions main menu
     if (mainIndex === menuOptions.length - 1) {
       menuOptions[0].isActive = true;
     } else {
       // select next item as Active
       menuOptions[mainIndex + 1].isActive = true;
-    }
-
-    // if its a last item then make first item As Active for Music Sub Menu
-    if (subIndex === musicSubMenu.length - 1) {
-      musicSubMenu[0].isActive = true;
-    } else {
-      // select next item as Active
-      musicSubMenu[subIndex + 1].isActive = true;
     }
 
     this.setState({
@@ -171,24 +159,12 @@ class Frame extends React.Component {
     const mainIndex = menuOptions.findIndex((item) => item.isActive);
     menuOptions[mainIndex].isActive = false;
 
-    // get Index of Active Item for Music Sub Menu
-    const subIndex = musicSubMenu.findIndex((item) => item.isActive);
-    musicSubMenu[subIndex].isActive = false;
-
     // if it's a first item then make last item as active Main Sub Menu
     if (mainIndex === 0) {
       menuOptions[menuOptions.length - 1].isActive = true;
     } else {
       // select prv item as active
       menuOptions[mainIndex - 1].isActive = true;
-    }
-
-    // if it's a first item then make last item as active Music Sub Menu
-    if (subIndex === 0) {
-      musicSubMenu[musicSubMenu.length - 1].isActive = true;
-    } else {
-      // select prv item as active
-      musicSubMenu[subIndex - 1].isActive = true;
     }
 
     this.setState({
@@ -198,69 +174,92 @@ class Frame extends React.Component {
   };
 
   centerButtonTap = () => {
-    const { menuOptions } = this.state;
-    const index = menuOptions.findIndex((item) => item.isActive);
-    let id;
+    const { menuOptions, musicSubMenu } = this.state;
+
+    var mainIndex = menuOptions.findIndex((item) => item.isActive);
+
+    let menuId;
     const lt = menuOptions.length;
 
     if (lt === 4) {
-      id = index + 1;
+      menuId = mainIndex + 1;
     }
 
     if (lt === 3) {
-      id = index + 5;
+      menuId = mainIndex + 5;
     }
 
-    if (id === 2) {
+    if (menuId === 2) {
       this.setState({
-        selectedOption: id,
-        // prevMenu: menuOptions,
-        // menuOptions: musicSubMenu,
+        prevMenu: menuOptions,
+        menuOptions: musicSubMenu,
       });
     }
 
     this.setState({
-      selectedOption: id,
+      selectedOption: menuId,
     });
   };
 
   menuButtonTap = () => {
-    // const { enu, menuOptions } = this.state;
+    const selectedOption = this.state.selectedOption;
 
-    this.setState({
-      selectedOption: 0,
-      menuOptions: [
-        {
-          id: 1,
-          title: "Coverflow",
-          img: coverflow,
-          isActive: true,
-        },
-        {
-          id: 2,
-          title: "Music",
-          img: headphones,
-          isActive: false,
-        },
-        {
-          id: 3,
-          title: "Games",
-          img: gaming,
-          isActive: false,
-        },
-        {
-          id: 4,
-          title: "Settings",
-          img: settings,
-          isActive: false,
-        },
-      ],
-    });
+    if (selectedOption === 5) {
+      this.setState({
+        selectedOption: 2,
+      });
+    } else {
+      this.setState({
+        selectedOption: 0,
+        menuOptions: [
+          {
+            id: 1,
+            title: "Coverflow",
+            img: coverflow,
+            isActive: true,
+          },
+          {
+            id: 2,
+            title: "Music",
+            img: headphones,
+            isActive: false,
+          },
+          {
+            id: 3,
+            title: "Games",
+            img: gaming,
+            isActive: false,
+          },
+          {
+            id: 4,
+            title: "Settings",
+            img: settings,
+            isActive: false,
+          },
+        ],
+      });
+    }
+  };
+
+  playPauseButtonTap = () => {
+    const Play = this.state.Play;
+
+    if (!Play) {
+      this.setState({
+        Play: true,
+      });
+    }
+
+    if (Play) {
+      this.setState({
+        Play: false,
+      });
+    }
   };
 
   render() {
     //-------------------------- destructuring ------------------
-    const { menuOptions, selectedOption, musicSubMenu } = this.state;
+    const { menuOptions, selectedOption, musicSubMenu, Play } = this.state;
 
     return (
       <div className="frame">
@@ -268,8 +267,9 @@ class Frame extends React.Component {
           menuOptions={menuOptions}
           musicSubMenu={musicSubMenu}
           selectedOption={selectedOption}
+          Play={Play}
         />
-        <Wheel />
+        <Wheel Play={Play} />
       </div>
     );
   }

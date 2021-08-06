@@ -1,0 +1,226 @@
+.player-screen {
+  margin: auto;
+  width: 300;
+  height: 700;
+  background-color: rgb(255, 255, 255);
+}
+
+.play-screen {
+  margin: auto;
+  display: block;
+  width: 100%;
+  height: 210px;
+  background-color: rgb(255, 255, 255);
+}
+/* =================== Navbar ============================ */
+.navbar {
+  width: 100%;
+  height: 16px;
+  background-color: #dedfe1;
+  background-image: linear-gradient(#e4e7e7, #8b8b8b);
+}
+
+#now-playing {
+  display: flex;
+  margin-top: -14px;
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#pause {
+  position: absolute;
+  margin-top: -26px;
+  margin-left: 196px;
+  width: 70px;
+  height: 90%;
+  color: #579b2e;
+  font-size: 12px;
+}
+
+#play {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 196px;
+  width: 70px;
+  height: 90%;
+  color: #579b2e;
+  font-size: 12px;
+}
+
+#battery {
+  position: absolute;
+  margin-top: -5px;
+  margin-left: 244px;
+  color: #579b2e;
+  font-size: 20px;
+}
+
+/* ========================= Song Info =============================== */
+
+.song-info {
+  margin: auto;
+  margin-top: 24px;
+  width: 92%;
+  height: 172px;
+}
+
+.song-cover-img {
+  width: 50%;
+  height: 100%;
+  margin-left: -20px;
+  margin-top: 36px;
+}
+
+#song-cover-image {
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(80%, transparent), to(rgba(19, 19, 19, 0.1)));
+  width: 100px;
+  height: 100px;
+  transform: perspective(8cm) rotateX(-0deg) rotateY(20deg)
+    translate3d(0, 0, 48px);
+}
+
+.song-metadata {
+  display: block;
+  padding: 12px;
+  margin-left: 108px;
+  margin-top: -124px;
+  width: 54%;
+  height: 100%;
+}
+
+#song-name {
+  margin-left: 10px;
+  white-space: nowrap;
+  width: 100px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+#artist-name {
+  margin-left: 10px;
+  margin-top: -16px;
+  white-space: nowrap;
+  width: 100px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgb(4, 39, 136);
+}
+
+.star {
+  margin-top: -12px;
+  color: rgb(199, 198, 198);
+}
+
+#star {
+  color: rgb(228, 196, 15);
+}
+
+/* ============================== Player Controls ====================== */
+
+.player-controls {
+  margin: auto;
+  margin-top: -44px;
+  width: 100%;
+  height: 24px;
+}
+
+/* ====================== Slider Style =========================== */
+
+.slider-container {
+  --progress-bar-height: 4px;
+}
+
+.slider-container {
+  position: relative;
+  margin: auto;
+  width: 64%;
+  /* border: 2px solid black; */
+}
+
+/* Background */
+.slider-container::before {
+  content: "";
+  background-color: rgb(255, 255, 255);
+  width: 99%;
+  height: 12px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Custom Progress Bar */
+.progress-bar-cover {
+  background-image: linear-gradient(#89b1fa, #165d97);
+  width: 0%;
+  height: 12px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/*  Hide Original */
+.range {
+  -webkit-appearance: none;
+  background-color: rgba(255, 255, 255, 0.397);
+  height: 10px;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+  margin: 0 auto;
+}
+
+/* ========================= Thumb Styling =========================== */
+
+.slider-container {
+  --thumb-width: 20px;
+  --thumb-height: 20px;
+}
+
+.range::-webkit-slider-thumb {
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+
+  background: #350f2d;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.thumb {
+  width: 12px;
+  height: 12px;
+  z-index: 3;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =================== Duration Styling ========================= */
+
+.startTime {
+  margin-top: -19px;
+  margin-left: -220px;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+}
+
+.endTime {
+  margin-top: -16px;
+  margin-left: 220px;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+}

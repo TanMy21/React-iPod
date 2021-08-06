@@ -21,7 +21,15 @@
   margin-top: 16px;
   font-size: 20px;
   color: rgb(0, 0, 0);
-  font-weight: 600;
+  font-weight: 700;
+  text-align: left;
+}
+
+#menu {
+  margin-top: 16px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: 800;
   text-align: left;
 }
 
@@ -35,14 +43,14 @@
 #menu-selected {
   background-color: rgb(30, 98, 223);
   color: rgb(253, 253, 253);
-  width: 128%;
+  width: 126%;
 }
 
 #menu-selected:after {
   padding: 1px;
   display: inline-block;
   color: rgb(255, 255, 255);
-  content: "  >";
+  content: " >";
   height: 10%;
-  overflow:visible;
+  overflow: visible;
 }

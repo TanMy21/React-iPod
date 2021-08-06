@@ -1,7 +1,7 @@
 import React from "react";
-import "../Static/Menubar.css";
+import "../../Static/Menubar.css";
 
-const Menulist = (props) => {
+const MusicMenulist = (props) => {
   const { item } = props;
   const { isActive } = item;
 
@@ -12,4 +12,4 @@ const Menulist = (props) => {
   );
 };
 
-export default Menulist;
+export default MusicMenulist;

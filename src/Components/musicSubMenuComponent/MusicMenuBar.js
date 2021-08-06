@@ -1,20 +1,22 @@
 import React from "react";
-import Navbar from "../Navbar";
 import "../../Static/Menubar.css";
 import Menulist from "../Menulist";
+import Navbar from "../Navbar";
 
-const Music = (props) => {
-  const menuOptions = props;
+const MusicMenubar = (props) => {
+  // ---------------------- Destructuring --------------------
+  const { menuOptions } = props;
 
   return (
     <div className="menubar">
       <div className="menu-navbar">
         <Navbar />
       </div>
-      <div className="menu">
+      <div id="menu">
         <div className="menu-option">
           <ul>
-            { menuOptions.menuOptions.map((item) => {
+            {/* ----------------- Render Menu Options as a List -------------------- */}
+            {menuOptions.map((item) => {
               return <Menulist item={item} key={item.id} />;
             })}
           </ul>
@@ -24,4 +26,4 @@ const Music = (props) => {
   );
 };
 
-export default Music;
+export default MusicMenubar;
