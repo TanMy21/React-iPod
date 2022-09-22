@@ -1,6 +1,6 @@
 # iPod using React JS
 
-https://reactipod.herokuapp.com
+https://magical-bavarois-68d83c.netlify.app/
 
 #### iPod built using React JS and ZingTouch Library for gesture recognition.
 ## Mainscreen
